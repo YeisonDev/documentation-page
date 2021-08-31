@@ -1,0 +1,157 @@
+@font-face {
+  font-family: headings;
+  src: url("../fonts/bebas-neue.regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "normal text";
+  src: url("../fonts/nunito.regular.woff2") format("woff2");
+}
+
+/* General styles */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "normal text";
+  font-size: 1.3rem;
+}
+
+/* headings font */
+.heading {
+  font-family: headings;
+  font-size: 2rem;
+}
+
+/* navigation bar */
+
+#navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-heading {
+  align-self: center;
+}
+
+#nav-ul {
+  width: 100%;
+  height: 169px;
+  padding: 0;
+  border: 1px solid #888;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+.nav-link {
+  padding: 5px 1.5em;
+  border: 1px solid #888;
+  transition: all 100ms;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:hover {
+  background-color: #7b6aa1;
+  color: #fff;
+}
+
+/* main sections  */
+
+.main-section {
+  width: 90%;
+  margin: 1em auto;
+}
+
+pre,
+code {
+  white-space: pre-line;
+}
+
+pre {
+  max-width: 600px;
+  padding: 2em 5;
+  background-color: #3333;
+  padding: 2em 1em;
+  font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pre-overflow {
+  overflow-x: scroll;
+}
+
+/* references */
+
+.reference-link {
+  color: #7b6aa1;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* e.g. styles */
+.outer {
+  border: 5px solid black;
+}
+
+.box-1 {
+  padding: 10px;
+  width: calc(90% - 30px);
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.box-2 {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+  transform: rotate(0.8turn);
+}
+
+@media (min-width: 1170px) {
+  #main-doc {
+    width: 99vw;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    overflow: hidden;
+  }
+
+  #navbar {
+    position: fixed;
+    top: 0;
+    border-right: 3px solid #333;
+  }
+
+  #nav-ul {
+    height: calc(90vh - 24px);
+    margin-top: 0;
+    border: 1px solid black;
+  }
+
+  .nav-link {
+    padding: 1.3em;
+  }
+
+  .main-section {
+    width: 90%;
+
+    grid-column: 2/3;
+  }
+}
+
+@media (max-width: 700px) {
+  .heading{
+    text-align: center;
+  }
+}

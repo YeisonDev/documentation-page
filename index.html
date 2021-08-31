@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CSS GRID documention" />
+  <meta name="author" content="YeisonDev" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>CSS Grid</title>
+</head>
+
+<body>
+  <main id="main-doc">
+    <nav id="navbar">
+      <h1 class="heading nav-heading">CSS Documentation</h1>
+      <ul id="nav-ul">
+        <a href="#introduction">
+          <li class="nav-link">Introduction</li>
+        </a>
+        <a href="#css_syntax">
+          <li class="nav-link">CSS Syntax</li>
+        </a>
+        <a href="#adding_css_to_our_document">
+          <li class="nav-link">Adding css to our document</li>
+        </a>
+        <a href="#specificity">
+          <li class="nav-link">Specificity</li>
+        </a>
+        <a href="#properties_and_values">
+          <li class="nav-link">Properties and Values</li>
+        </a>
+        <a href="#functions">
+          <li class="nav-link">Functions</li>
+        </a>
+        <a href="#@rules">
+          <li class="nav-link">@rules</li>
+        </a>
+        <a href="#shorthands">
+          <li class="nav-link">Shorthands</li>
+        </a>
+        <a href="#comments">
+          <li class="nav-link">Comments</li>
+        </a>
+        <a href="#reference">
+          <li class="nav-link">Reference</li>
+        </a>
+      </ul>
+    </nav>
+
+    <section class="main-section">
+      <h2 id="introduction" class="heading">Introduction</h2>
+      <p>
+        CSS (Cascading Style Sheets) is used to style and lay out web pages —
+        for example, to alter the font, color, size, and spacing of your
+        content, split it into multiple columns, or add animations and other
+        decorative features.
+      </p>
+    </section>
+
+    <section class="main-section">
+      <h2 id="css_syntax" class="heading">CSS Syntax</h2>
+      <p>
+        CSS is a rule-based language — you define rules specifying groups of
+        styles that should be applied to particular elements or groups of
+        elements on your web page. For example "I want the main heading on my
+        page to be shown as large red text."
+      </p>
+
+      <p>
+        The following code shows a very simple CSS rule that would achieve the
+        styling described above:
+      </p>
+      <pre>
+        <code>
+          h1 {
+            color: red;
+            font-size: 5em;
+          } 
+        </code>
+      </pre>
+
+      <p>
+        The rule opens with a selector . This selects the HTML element that we
+        are going to style. In this case we are styling level one headings
+        (&lt;h1&gt;).
+      </p>
+      <p>
+        We then have a set of curly braces { }. Inside those will be one or
+        more declarations, which take the form of property and value pairs.
+        Each pair specifies a property of the element(s) we are selecting,
+        then a value that we'd like to give the property.
+      </p>
+      <p>
+        Before the colon, we have the property, and after the colon, the
+        value. CSS properties have different allowable values, depending on
+        which property is being specified. In our example, we have the color
+        property, which can take various color values. We also have the
+        font-size property. This property can take various size units as a
+        value.
+      </p>
+
+      <p>
+        A CSS stylesheet will contain many such rules, written one after the
+        other:
+      </p>
+
+      <pre>
+        <code>
+          h1 {
+            color: red;
+            font-size: 5em;
+          }
+        
+        p {
+            color: black;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section class="main-section">
+      <h2 id="adding_css_to_our_document" class="heading">Adding CSS to our document</h2>
+      <p>
+        The very first thing we need to do is to tell the HTML document that
+        we have some CSS rules we want it to use. There are three different
+        ways to apply CSS to an HTML document that you'll commonly come
+        across, however, for now, we will look at the most usual and useful
+        way of doing so — linking CSS from the head of your document.
+      </p>
+
+      <p>
+        Create a file in the same folder as your HTML document and save it as
+        styles.css. The .css extension shows that this is a CSS file.
+      </p>
+
+      <p>
+        To link styles.css to index.html add the following line somewhere inside the
+
+        <head> of the HTML document:
+      </p>
+
+      <pre>
+        <code>
+          &lt;link rel="stylesheet" href="styles.css"&gt;
+        </code>
+      </pre>
+
+      <p>
+        This &lt;link&gt; element tells the browser that we have a stylesheet, using the rel attribute, and the location
+        of that stylesheet as the value of the href attribute. You can test that the CSS works by adding a rule to
+        styles.css. Using your code editor add the following to your CSS file:
+      </p>
+
+      <pre>
+        <code>
+          h1 {
+            color: red;
+          }
+        </code>
+      </pre>
+
+      <p>
+        Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of the
+        document should now be red. If that happens, congratulations — you have successfully applied some CSS to an HTML
+        document. If that doesn't happen, carefully check that you've typed everything correctly.
+      </p>
+
+      <p>
+        You can continue to work in styles.css locally, or you can use our interactive editor below to continue with
+        this tutorial. The interactive editor acts as if the CSS in the first panel is linked to the HTML document, just
+        as we have with our document above.
+      </p>
+    </section>
+
+    <section class="main-section">
+      <h2 id="selectors" class="heading">Selectors</h2>
+      <p>
+        A selector targets HTML to apply styles to content. Each CSS rule starts with a selector — or a list of
+        selectors — in order to tell the browser which element or elements the rules should apply to. All the examples
+        below are valid selectors or lists of selectors.
+      </p>
+
+      <pre>
+        <code>
+          h1
+          a:link
+          .manythings
+          #onething
+          *
+          .box p
+          .box p:first-child
+          h1, h2, .intro
+        </code>
+      </pre>
+    </section>
+
+    <section class="main-section">
+      <h2 id="specificity" class="heading">Specificity</h2>
+      <p>
+        You may encounter scenarios where two selectors select the same HTML element. Consider the stylesheet below,
+        with a p selector that sets paragraph text to blue. However, there is also a class that sets the text of
+        selected elements to red.
+      </p>
+      <pre>
+        <code>
+          .special {
+            color: red;
+          }
+          
+          p {
+            color: blue;
+          }
+        </code>
+      </pre>
+      <p>
+        Suppose that in our HTML document, we have a paragraph with a class of special. Both rules apply. Which selector
+        prevails? Do you expect to see blue or red paragraph text?
+      </p>
+
+      <pre>
+        <code>
+          &lt;p class="special"&gt;What color am I?&lt;/p&gt;
+        </code>
+      </pre>
+
+      <p>
+        The CSS language has rules to control which selector is stronger in the event of a conflict. These rules are
+        called cascade and specificity. In the code block below, we define two rules for the p selector, but the
+        paragraph text will be blue. This is because the declaration that sets the paragraph text to blue appears later
+        in the stylesheet. Later styles replace conflicting styles that appear earlier in the stylesheet. This is the
+        cascade rule.
+      </p>
+
+      <pre>
+        <code>
+          p {
+            color: red;
+          }
+            
+          p {
+            color: blue;
+          }
+        </code>
+      </pre>
+
+      <p>
+        However, in the case of our earlier example with the conflict between the class selector and the element
+        selector, the class prevails, rendering the paragraph text red. How can this happen even though a conflicting
+        style appears later in the stylesheet? A class is rated as being more specific, as in having more specificity
+        than the element selector, so it cancels the other conflicting style declaration.
+      </p>
+
+      <p>
+        For now, remember that specificity exists. Sometimes, CSS might not apply as you expected because something else
+        in the stylesheet has more specificity. Recognizing that more than one rule could apply to an element is the
+        first step in fixing these kinds of issues.
+      </p>
+    </section>
+
+
+    <section class="main-section">
+      <h2 id="properties_and_values" class="heading">Properties and values</h2>
+      <p>
+        At its most basic level, CSS consists of two components:
+      </p>
+
+      <ul>
+        <li>
+          <Strong>Properties:</Strong> These are human-readable identifiers that indicate which stylistic features you
+          want to modify. For example, font-size, width, background-color.
+
+        </li>
+        <li>
+          <strong>Values:</strong> Each property is assigned a value. This value indicates how to style the property.
+        </li>
+      </ul>
+
+      <p>
+        The example below highlights a single property and value. The property name is color and the value is blue.
+      </p>
+      <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured/declaration.png"
+        alt="css declaration">
+      <p>
+        When a property is paired with a value, this pairing is called a CSS declaration. CSS declarations are found
+        within CSS Declaration Blocks. In the example below, highlighting identifies the CSS declaration block.
+      </p>
+      <img
+        src="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured/declaration-block.png"
+        alt="Declaration block">
+      <p>
+        Finally, CSS declaration blocks are paired with selectors to produce CSS rulesets (or CSS rules). The example
+        below contains two rules: one for the h1 selector and one for the p selector. The colored highlighting
+        identifies the h1 rule.
+      </p>
+      <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured/rules.png"
+        alt="rules">
+      <p>
+        Setting CSS properties to specific values is the primary way of defining layout and styling for a document. The
+        CSS engine calculates which declarations apply to every single element of a page.
+      </p>
+    </section>
+
+    <section class="main-section">
+      <h2 id="functions" class="heading">Functions</h2>
+      <p>
+        While most values are relatively simple keywords or numeric values, there are some values that take the form of
+        a function. An example would be the calc() function, which can do simple math within CSS:
+      </p>
+ 
+      <pre>
+        <code>
+          &lt;div class="outer"&gt;&lt;div class="box"&gt;The inner box is 90% - 30px.&lt;/div&gt;&lt;/div&gt;
+        </code>
+      </pre>
+
+      <pre>
+        <code>
+          .outer {
+            border: 5px solid black;
+         }
+           
+         .box {
+           padding: 10px;
+           width: calc(90% - 30px);
+           background-color: rebeccapurple;
+           color: white;
+         }
+        </code>
+      </pre>
+
+      <p>This renders as:</p>
+
+      <div class="example-code">
+        <div class="outer">
+          <div class="box-1">The inner box is 90% - 30px.</div>
+        </div>
+      </div>
+
+      <p>
+        A function consists of the function name, and parentheses to enclose the values for the function. In the case of
+        the calc() example above, the values define the width of this box to be 90% of the containing block width, minus
+        30 pixels. The result of the calculation isn't something that can be computed in advance and entered as a static
+        value.
+      </p>
+
+      <p>Another example would be the various values for transform, such as rotate().</p>
+
+      <pre>
+        <code>
+          &lt;div class="box"&gt;&lt;/div&gt;
+        </code>
+      </pre>
+
+      <pre>
+        <code>
+          .box {
+            margin: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+            transform: rotate(0.8turn);
+          }
+        </code>
+      </pre>
+
+      <p>The output from the above code looks like this:</p>
+
+      <div class="example-code">
+        <div class="box-2"></div>
+      </div>
+    </section>
+
+    <section class="main-section">
+      <h2 id="@rules" class="heading">@rules</h2>
+      <p>
+        CSS @rules (pronounced "at-rules") provide instruction for what CSS should perform or how it should behave. Some
+        @rules are simple with just a keyword and a value. For example, @import imports a stylesheet into another CSS
+        stylesheet: 
+      </p>
+
+      <pre>
+        <code>
+          @import 'styles2.css';
+        </code>
+      </pre>
+
+
+      <p>
+        One common @rule that you are likely to encounter is @media, which is used to create media queries. Media
+        queries use conditional logic for applying CSS styling.
+      </p>
+
+      <p>
+        In the example below, the stylesheet defines a default pink background for the &lt;body&gt; element. However, a media query follows that defines a blue background if the browser viewport is wider than 30em.
+      </p>
+
+      <pre>
+        <code>
+          body {
+            background-color: pink;
+           }
+
+         @media (min-width: 30em) {
+            body {
+             background-color: blue;
+            }
+          }
+        </code>
+      </pre>
+    </section> 
+
+    <section class="main-section">
+      <h2 id="shorthands" class="heading">Shorthands</h2>
+      <p>
+        Some properties like font, background, padding, border, and margin are called shorthand properties. This is because shorthand properties set several values in a single line.
+      </p>
+
+      <p>
+        For example, this one line of code:
+      </p>
+
+      <pre>
+        <code>
+          padding: 10px 15px 15px 5px;
+        </code>
+      </pre>
+
+      <p>
+        is equivalent to these four lines of code:
+      </p>
+
+      <pre>
+        <code>
+          padding-top: 10px;
+          padding-right: 15px;
+          padding-bottom: 15px;
+          padding-left: 5px;
+        </code>
+      </pre>
+
+      <p>
+        This one line:
+      </p>
+
+      <pre>
+        <code>
+          background: red url(bg-graphic.png) 10px 10px repeat-x fixed;
+        </code>
+      </pre>
+
+      <p>
+        is equivalent to these five lines:
+      </p>
+
+
+      <pre>
+        <code>
+          background-color: red;
+          background-image: url(bg-graphic.png);
+          background-position: 10px 10px;
+          background-repeat: repeat-x;
+          background-attachment: fixed;  
+        </code>
+      </pre>
+    </section>
+
+    <section class="main-section">
+      <h2 id="comments" class="heading">Comments</h2>
+      <p>
+        As with any coding work, it is best practice to write comments along with CSS. This helps you to remember how the code works as you come back later for fixes or enhancement. It also helps others understand the code.      
+      </p>
+      <p>
+        CSS comments begin with /* and end with */. In the example below, comments mark the start of distinct sections of code. This helps to navigate the codebase as it gets larger. With this kind of commenting in place, searching for comments in your code editor becomes a way to efficiently find a section of code.
+      </p>
+
+
+      <pre class="pre-overflow">
+        <code>
+          /* Handle basic element styling */
+          /* -------------------------------------------------------------------------------------------- */
+          body {
+            font: 1em/150% Helvetica, Arial, sans-serif;
+            padding: 1em;
+            margin: 0 auto;
+            max-width: 33em;
+          }
+          
+          @media (min-width: 70em) {
+            /* Increase the global font size on larger screens or windows
+               for better readability */
+            body {
+              font-size: 130%;
+            }
+          }
+          
+          h1 {font-size: 1.5em;}
+          
+          /* Handle specific elements nested in the DOM  */
+          /* -------------------------------------------------------------------------------------------- */
+          div p, #id:first-line {
+            background-color: red;
+            border-radius: 3px;
+          }
+          
+          div p {
+            margin: 0;
+            padding: 1em;
+          }
+          
+          div p + p {
+            padding-top: 0;
+          }
+      </code>
+    </pre>
+      
+
+      <p>
+        "Commenting out" code is also useful for temporarily disabling sections of code for testing. In the example below, the rules for .special are disabled by "commenting out" the code.
+      </p>
+
+        
+      <pre>
+        <code>
+          /*.special {
+            color: red;
+          }*/
+          
+          p {
+            color: blue;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section class="main-section">
+      <header id="reference" class="heading">Reference</header>
+      <article >
+        <ul>
+          <li>
+            All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps" target="_blank" class="reference-link">MDN</a>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+  
+  </main>
+</body>
+</html>
