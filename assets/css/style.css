@@ -37,7 +37,9 @@ body {
 }
 
 .nav-heading {
+  display: block;
   align-self: center;
+  margin: 1em;
 }
 
 #nav-ul {
@@ -50,12 +52,10 @@ body {
 }
 
 .nav-link {
+  display: block;
   padding: 5px 1.5em;
   border: 1px solid #888;
   transition: all 100ms;
-}
-
-a {
   text-decoration: none;
   color: inherit;
 }
@@ -119,11 +119,11 @@ pre {
   transform: rotate(0.8turn);
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 950px) {
   #main-doc {
     width: 99vw;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 350px 1fr;
     overflow: hidden;
   }
 
@@ -134,7 +134,7 @@ pre {
   }
 
   #nav-ul {
-    height: calc(90vh - 24px);
+    height: calc(100vh - 0.9em);
     margin-top: 0;
     border: 1px solid black;
   }
@@ -144,8 +144,8 @@ pre {
   }
 
   .main-section {
+    align-self: center;
     width: 90%;
-
     grid-column: 2/3;
   }
 }

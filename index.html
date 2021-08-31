@@ -2,54 +2,59 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CSS GRID documention" />
-  <meta name="author" content="YeisonDev" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSS GRID documention">
+  <meta name="author" content="YeisonDev">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>CSS Grid</title>
 </head>
 
 <body>
-  <main id="main-doc">
-    <nav id="navbar">
-      <h1 class="heading nav-heading">CSS Documentation</h1>
-      <ul id="nav-ul">
-        <a href="#introduction">
-          <li class="nav-link">Introduction</li>
-        </a>
-        <a href="#css_syntax">
-          <li class="nav-link">CSS Syntax</li>
-        </a>
-        <a href="#adding_css_to_our_document">
-          <li class="nav-link">Adding css to our document</li>
-        </a>
-        <a href="#specificity">
-          <li class="nav-link">Specificity</li>
-        </a>
-        <a href="#properties_and_values">
-          <li class="nav-link">Properties and Values</li>
-        </a>
-        <a href="#functions">
-          <li class="nav-link">Functions</li>
-        </a>
-        <a href="#@rules">
-          <li class="nav-link">@rules</li>
-        </a>
-        <a href="#shorthands">
-          <li class="nav-link">Shorthands</li>
-        </a>
-        <a href="#comments">
-          <li class="nav-link">Comments</li>
-        </a>
-        <a href="#reference">
-          <li class="nav-link">Reference</li>
-        </a>
-      </ul>
-    </nav>
+  <nav id="navbar">
+    <header id="CSS_Documentation" class="heading nav-heading">CSS Documentation</header>
+    <ul id="nav-ul">
+        <li>
+          <a href="#Introduction" class="nav-link">Introduction</a>
+        </li>
+        <li>
+          <a href="#CSS_Syntax" class="nav-link">CSS Syntax</a>
+        </li>
+        <li><a href="#Adding_CSS_to_our_document" class="nav-link">
+          Adding CSS to our document</a>
+        </li>
+        <li>
+          <a href="#Selectors" class="nav-link">Selectors</a>
+        </li>
+        <li>
+          <a href="#Specificity" class="nav-link">
+          Specificity</a>
+        </li>
+        <li>
+          <a href="#Properties_and_Values" class="nav-link">Properties and Values</a>
+        </li>
+        <li>
+          <a href="#Functions" class="nav-link">Functions</a>
+        </li>
+        <li>
+          <a href="#@rules"class="nav-link" >@rules</a>
+        </li>
+        <li>
+          <a href="#Shorthands" class="nav-link">Shorthands</a>
+        </li>
+        <li>
+          <a href="#Comments" class="nav-link">Comments</a>
+        </li>
 
-    <section class="main-section">
-      <h2 id="introduction" class="heading">Introduction</h2>
+        <li>
+          <a href="#Reference" class="nav-link">Reference</a>
+        </li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section id="Introduction" class="main-section">
+      <header class="heading">Introduction</header>
       <p>
         CSS (Cascading Style Sheets) is used to style and lay out web pages —
         for example, to alter the font, color, size, and spacing of your
@@ -58,8 +63,8 @@
       </p>
     </section>
 
-    <section class="main-section">
-      <h2 id="css_syntax" class="heading">CSS Syntax</h2>
+    <section id="CSS_Syntax" class="main-section">
+      <header class="heading">CSS Syntax</header>
       <p>
         CSS is a rule-based language — you define rules specifying groups of
         styles that should be applied to particular elements or groups of
@@ -80,25 +85,28 @@
         </code>
       </pre>
 
-      <p>
-        The rule opens with a selector . This selects the HTML element that we
-        are going to style. In this case we are styling level one headings
-        (&lt;h1&gt;).
-      </p>
-      <p>
-        We then have a set of curly braces { }. Inside those will be one or
-        more declarations, which take the form of property and value pairs.
-        Each pair specifies a property of the element(s) we are selecting,
-        then a value that we'd like to give the property.
-      </p>
-      <p>
-        Before the colon, we have the property, and after the colon, the
-        value. CSS properties have different allowable values, depending on
-        which property is being specified. In our example, we have the color
-        property, which can take various color values. We also have the
-        font-size property. This property can take various size units as a
-        value.
-      </p>
+      <ul>
+        <li>
+          The rule opens with a selector . This selects the HTML element that we
+          are going to style. In this case we are styling level one headings
+          (&lt;h1&gt;).
+        </li>
+        <li>
+          We then have a set of curly braces { }. Inside those will be one or
+          more declarations, which take the form of property and value pairs.
+          Each pair specifies a property of the element(s) we are selecting,
+          then a value that we'd like to give the property.
+        </li>
+        <li>
+          Before the colon, we have the property, and after the colon, the
+          value. CSS properties have different allowable values, depending on
+          which property is being specified. In our example, we have the color
+          property, which can take various color values. We also have the
+          font-size property. This property can take various size units as a
+          value.
+        </li>
+      </ul>
+
 
       <p>
         A CSS stylesheet will contain many such rules, written one after the
@@ -119,8 +127,8 @@
       </pre>
     </section>
 
-    <section class="main-section">
-      <h2 id="adding_css_to_our_document" class="heading">Adding CSS to our document</h2>
+    <section id="Adding_CSS_to_our_document" class="main-section">
+      <header  class="heading">Adding CSS to our document</header>
       <p>
         The very first thing we need to do is to tell the HTML document that
         we have some CSS rules we want it to use. There are three different
@@ -173,8 +181,8 @@
       </p>
     </section>
 
-    <section class="main-section">
-      <h2 id="selectors" class="heading">Selectors</h2>
+    <section id="Selectors" class="main-section">
+      <header  class="heading">Selectors</header>
       <p>
         A selector targets HTML to apply styles to content. Each CSS rule starts with a selector — or a list of
         selectors — in order to tell the browser which element or elements the rules should apply to. All the examples
@@ -190,13 +198,13 @@
           *
           .box p
           .box p:first-child
-          h1, h2, .intro
+          h1, header, .intro
         </code>
       </pre>
     </section>
 
-    <section class="main-section">
-      <h2 id="specificity" class="heading">Specificity</h2>
+    <section id="Specificity" class="main-section">
+      <header  class="heading">Specificity</header>
       <p>
         You may encounter scenarios where two selectors select the same HTML element. Consider the stylesheet below,
         with a p selector that sets paragraph text to blue. However, there is also a class that sets the text of
@@ -259,8 +267,8 @@
     </section>
 
 
-    <section class="main-section">
-      <h2 id="properties_and_values" class="heading">Properties and values</h2>
+    <section id="Properties_and_Values" class="main-section">
+      <header  class="heading">Properties and Values</header>
       <p>
         At its most basic level, CSS consists of two components:
       </p>
@@ -301,8 +309,8 @@
       </p>
     </section>
 
-    <section class="main-section">
-      <h2 id="functions" class="heading">Functions</h2>
+    <section id="Functions" class="main-section">
+      <header class="heading">Functions</header>
       <p>
         While most values are relatively simple keywords or numeric values, there are some values that take the form of
         a function. An example would be the calc() function, which can do simple math within CSS:
@@ -371,8 +379,8 @@
       </div>
     </section>
 
-    <section class="main-section">
-      <h2 id="@rules" class="heading">@rules</h2>
+    <section id="@rules" class="main-section">
+      <header  class="heading">@rules</header>
       <p>
         CSS @rules (pronounced "at-rules") provide instruction for what CSS should perform or how it should behave. Some
         @rules are simple with just a keyword and a value. For example, @import imports a stylesheet into another CSS
@@ -411,8 +419,8 @@
       </pre>
     </section>
 
-    <section class="main-section">
-      <h2 id="shorthands" class="heading">Shorthands</h2>
+    <section id="Shorthands" class="main-section">
+      <header class="heading">Shorthands</header>
       <p>
         Some properties like font, background, padding, border, and margin are called shorthand properties. This is
         because shorthand properties set several values in a single line.
@@ -467,8 +475,8 @@
       </pre>
     </section>
 
-    <section class="main-section">
-      <h2 id="comments" class="heading">Comments</h2>
+    <section id="Comments" class="main-section">
+      <header  class="heading">Comments</header>
       <p>
         As with any coding work, it is best practice to write comments along with CSS. This helps you to remember how
         the code works as you come back later for fixes or enhancement. It also helps others understand the code.
@@ -539,9 +547,8 @@
       </pre>
     </section>
 
-    <section class="main-section">
-      <header id="reference" class="heading">Reference</header>
-      <article>
+    <section id="Reference" class="main-section">
+      <header class="heading">Reference</header>
         <ul>
           <li>
             All the documentation in this page is taken from <a
@@ -549,11 +556,10 @@
               class="reference-link">MDN</a>
           </li>
         </ul>
-      </article>
     </section>
-
-
   </main>
+
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 
 </html>
